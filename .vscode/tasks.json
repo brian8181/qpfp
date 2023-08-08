@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "MAKE DEBUGGDB",
+            "type": "shell",
+            "command": "make -f ${workspaceFolder}/Makefile",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        }
+    ]
+}
