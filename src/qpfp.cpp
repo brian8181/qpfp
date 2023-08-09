@@ -9,15 +9,16 @@
 #include <vector>
 #include <map>
 #include <regex>
-#include <getopt.h>
-#include "main.hpp"
-#include "bash_color.h"
-#include "qpfp.hpp"
 #include "utility.hpp"
+#include "qpfp.hpp"
 
 using namespace std;
 
-void parse(string exp);
+void print_help()
+{
+	string help = "qpfp [OPTION]... [INPUT]...";
+	std::cout << help << std::endl;
+}
 
 int parse_options(int argc, char* argv[])
 {
@@ -77,13 +78,12 @@ void parse(string input)
 	len = opers_sm.size();
 	for(int i = 0; i < len; ++i)
 	{
-		//int jlen = op_map.size();
-		int jlen = opers_sm.size();
-		for(int j = 0; j < jlen; ++j)
-		{
-			if(opers_sm[i][j].matched)
-				cout << "index=" << j << " " << opers_sm[i][j].str() << endl;
-		}
-		//cout << opers_sm[i].str() << endl;
+		// int jlen = opers_sm.size();
+		// for(int j = 0; j < jlen; ++j)
+		// {
+		// 	if(opers_sm[i][j].matched)
+		// 		cout << "index=" << j << " " << opers_sm[i][j].str() << endl;
+		// }
+		cout << opers_sm[i].str() << endl;
 	}
 }

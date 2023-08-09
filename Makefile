@@ -17,10 +17,10 @@ INCLUDES = -I/usr/local/include/cppunit/
 # Makefile settings - Can be customized.
 APPNAME = qpfp
 EXT = cpp
-ROOTDIR  = ~/src/pfp/qpfp
-BUILD = ~/src/pfp/qpfp/build
-OBJ = ~/src/pfp/qpfp/build
-SRC = ~/src/pfp/qpfp/src
+ROOTDIR  = ~/src/qpfp
+BUILD = ~/src/qpfp/build
+OBJ = ~/src/qpfp/build
+SRC = ~/src/qpfp/src
 
 # compile & link for debug
 #debug: CXXFLAGS += -DDEBUG -g

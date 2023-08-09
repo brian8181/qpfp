@@ -7,12 +7,17 @@
 #ifndef _qpfp_HPP
 #define _qpfp_HPP
 
-// constants
+#include <getopt.h>
+#include <string>
+#include "bash_color.h"
+
+using std::string;
 
 // Options Flags
 unsigned char DEFAULTS = 0;
 unsigned char option_flags = 0; 
 
+// constants
 const int NUMBER = 1;
 const int MULT_DIV = 0;
 const int ADD_SUB = 0;
@@ -27,6 +32,10 @@ const string opers_sexpress = "(\\-)|(\\+)|(\\*)|(\\^)";
 const string parens_sexpress = "(\\))|(\\()";
 const string binary_op_sexpress = number_sexpress + "\\s+" + "[-+*^]" + "\\s+" + number_sexpress;
 
+// functions
+void print_help();
+int parse_options(int argc, char* argv[]);
+void parse(string exp);
 
 #endif
 
