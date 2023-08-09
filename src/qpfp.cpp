@@ -67,10 +67,11 @@ void parse(string input)
 		cout << opers_alt[i] << endl;
 	}
 
-	// const int PLUS = 2;
-	// const int EXPONET = 4;
-	// const int MULT = 3;
-	// const vector<int> op_map = {PLUS, EXPONET, MULT};
+	const int PLUS = 2;
+	const int EXP = 4;
+	const int MULT = 3;
+	const int DIV = 5;
+	const vector<int> op_map = {PLUS, EXP, MULT, DIV};
 
 	cout << "opers sm ..." << endl;
 	vector<smatch> opers_sm;
