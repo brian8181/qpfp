@@ -72,18 +72,22 @@ void parse(string input)
 	// const int MULT = 3;
 	// const vector<int> op_map = {PLUS, EXPONET, MULT};
 
-	cout << "opers ..." << endl;
+	cout << "opers sm ..." << endl;
 	vector<smatch> opers_sm;
 	qmatch(opers_sexpress, input, opers_sm);
-	len = opers_sm.size();
-	for(int i = 0; i < len; ++i)
+	int ilen = opers_sm.size();
+	cout << "ilen=" << ilen << endl;
+	for(int i = 0; i < ilen; ++i)
 	{
-		// int jlen = opers_sm.size();
-		// for(int j = 0; j < jlen; ++j)
+		int jlen = opers_sm.size();
+		cout << "jlen=" << jlen << endl;
+		for(int j = 0; j < jlen; ++j)
+			cout << "j=" << j << " matched=" << opers_sm[i][0].str() << endl; 
+
 		// {
 		// 	if(opers_sm[i][j].matched)
 		// 		cout << "index=" << j << " " << opers_sm[i][j].str() << endl;
 		// }
-		cout << opers_sm[i].str() << endl;
+		//cout << opers_sm[i].str() << endl;
 	}
 }
