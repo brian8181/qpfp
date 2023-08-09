@@ -23,8 +23,8 @@ const int OPEN_PAREN = 5;
 const int CLOSE_PAREN = 5;
 
 const string number_sexpress = "\\d+(\\.\\d*)?";
-const string oper_sexpress = "[-+*/^]";
-const string opers_sexpress = "(\\-)|(\\+)|(\\*)|(\\^)";
+const string oper_sexpress = "[-+*/^)(]";
+const string opers_sexpress = "(\\-)|(\\+)|(\\*)|(\\^)|(\\))|(\\()";
 const string paren_sexpress = "[\\)\\(]";
 const string parens_sexpress = "(\\))|(\\()";
 const string binary_op_sexpress = number_sexpress + "\\s+" + "[-+*^]" + "\\s+" + number_sexpress;

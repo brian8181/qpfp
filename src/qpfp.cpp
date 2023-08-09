@@ -37,8 +37,9 @@ void parse(string input)
 	int len = tokens.size();
 	for(int i = 0; i < len; ++i)
 	{
-		cout << tokens[i] << endl;
+		cout << tokens[i] << ", ";
 	}
+	cout << endl;
 
 	cout << "opers ..." << endl;
 	vector<string> opers;
@@ -46,8 +47,9 @@ void parse(string input)
 	len = opers.size();
 	for(int i = 0; i < len; ++i)
 	{
-		cout << opers[i] << endl;
+		cout << opers[i] << ", ";
 	}
+	cout << endl;
 
 	cout << "numbers ..." << endl;
 	vector<string> numbers;
@@ -55,8 +57,9 @@ void parse(string input)
 	len = numbers.size();
 	for(int i = 0; i < len; ++i)
 	{
-		cout << numbers[i] << endl;
+		cout << numbers[i] << ", ";
 	}
+	cout << endl;
 
 	cout << "opers_alt ..." << endl;
 	vector<string> opers_alt;
@@ -64,8 +67,9 @@ void parse(string input)
 	len = opers_alt.size();
 	for(int i = 0; i < len; ++i)
 	{
-		cout << opers_alt[i] << endl;
+		cout << opers_alt[i] << ", ";
 	}
+	cout << endl;
 
 	const int PLUS = 2;
 	const int EXP = 4;
@@ -85,13 +89,8 @@ void parse(string input)
 		for(int j = 1; j < jlen; ++j)
 		{
 			if(opers_sm[i][j].matched)
-				cout << "j=" << j << " matched=" << opers_sm[i][0].str() << endl; 
+				cout << "j=" << j << " matched=" << opers_sm[i][0].str() << ", "; 
 		}
-
-		// {
-		// 	if(opers_sm[i][j].matched)
-		// 		cout << "index=" << j << " " << opers_sm[i][j].str() << endl;
-		// }
-		//cout << opers_sm[i].str() << endl;
 	}
+	cout << endl;
 }
