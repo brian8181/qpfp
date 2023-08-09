@@ -80,10 +80,13 @@ void parse(string input)
 	cout << "ilen=" << ilen << endl;
 	for(int i = 0; i < ilen; ++i)
 	{
-		int jlen = opers_sm.size();
+		int jlen = opers_sexpress.size();
 		cout << "jlen=" << jlen << endl;
-		for(int j = 0; j < jlen; ++j)
-			cout << "j=" << j << " matched=" << opers_sm[i][0].str() << endl; 
+		for(int j = 1; j < jlen; ++j)
+		{
+			if(opers_sm[i][j].matched)
+				cout << "j=" << j << " matched=" << opers_sm[i][0].str() << endl; 
+		}
 
 		// {
 		// 	if(opers_sm[i][j].matched)
