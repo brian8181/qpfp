@@ -32,7 +32,8 @@ const string binary_op_sexpress = number_sexpress + "\\s+" + "[-+*^]" + "\\s+" +
 // functions
 void print_help();
 int parse_options(int argc, char* argv[]);
-void parse(string exp);
+void match(string input);
+void inner_match(string input);
 
 #endif
 

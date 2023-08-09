@@ -23,11 +23,12 @@ void print_help()
 int parse_options(int argc, char* argv[])
 {
 	string input = argv[1];
-	parse(input);
+	match(input);
+	inner_match(input);
 	return 0;
 }
 
-void parse(string input)
+void match(string input)
 {
 	const string tokens_sexpress = "(" + number_sexpress + ")|(" + oper_sexpress + ")|(" + "[\\)\\(]" + ")";
 
@@ -70,7 +71,10 @@ void parse(string input)
 		cout << opers_alt[i] << ", ";
 	}
 	cout << endl;
+}
 
+void inner_match(string input)
+{
 	const int PLUS = 2;
 	const int EXP = 4;
 	const int MULT = 3;
