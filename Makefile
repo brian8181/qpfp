@@ -1,5 +1,4 @@
-# MAKE_TEMPLATE = 0.l.2
-# BUILD_VERSION = 0.l.2
+# BUILD_VERSION = 0.0.1
 
 prefix = /usr/local
 mandir = $(prefix)/share/man
@@ -22,12 +21,7 @@ BUILD = ~/src/qpfp/build
 OBJ = ~/src/qpfp/build
 SRC = ~/src/qpfp/src
 
-# compile & link for debug
-#debug: CXXFLAGS += -DDEBUG -g
 debug: all
-
-# compile & link for debug GDBversion variable
-#debuggdb: CXXFLAGS += -DDEBUG -ggdb # compile & link
 all: $(APPNAME) bash_color_test
 
 # link

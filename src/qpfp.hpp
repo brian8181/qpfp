@@ -13,10 +13,6 @@
 
 using std::string;
 
-// Options Flags
-unsigned char DEFAULTS = 0;
-unsigned char option_flags = 0; 
-
 // constants
 const int NUMBER = 1;
 const int MULT_DIV = 0;
