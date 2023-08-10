@@ -74,6 +74,12 @@ void match(string input)
 	cout << "binary (* or /) operation ..." << endl;
 	cout << *lhs << *op << *rhs << endl;
 
+	op = find_first_of_add_sub_operator(tokens);
+	lhs = op-1;
+	rhs = op+1;
+	cout << "binary (+ or -) operation ..." << endl;
+	cout << *lhs << *op << *rhs << endl;
+	
 	cout << "opers ..." << endl;
 	vector<string> opers;
 	qmatch(oper_sexpress, input, opers);
