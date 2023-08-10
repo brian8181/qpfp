@@ -21,7 +21,7 @@ void qmatch(const string& sexpress, const string& input, /* out */ vector<string
     }
 }
 
-void qmatch(const string& sexpress, const string& input, /* out */ vector<std::smatch>& matches)
+void qmatch(const string& sexpress, const string& input, /* out */ vector<smatch>& matches)
 {
     std::regex::flag_type REGX_FLAGS = std::regex::ECMAScript;
     std::regex express = std::regex(sexpress, REGX_FLAGS);
