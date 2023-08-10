@@ -22,7 +22,7 @@ OBJ = ~/src/qpfp/build
 SRC = ~/src/qpfp/src
 
 debug: all
-all: $(APPNAME) bash_color_test
+all: $(APPNAME)
 
 # link
 $(APPNAME): $(APPNAME).o main.o utility.o #@@PREREQUISTE@@
@@ -37,12 +37,6 @@ main.o:
 
 utility.o: 
 	$(CXX) $(CXXFLAGS) -c $(SRC)/utility.$(EXT) -o $(BUILD)/utility.o
-
-bash_color_test: bash_color_test.o
-	$(CXX) $(CXXFLAGS) $(BUILD)/bash_color_test.o -o $(BUILD)/bash_color_test
-
-bash_color_test.o:
-	$(CXX) $(CXXFLAGS) -c $(SRC)/bash_color_test.cpp -o $(BUILD)/bash_color_test.o
 
 #AUTO_INSERT_POINT_DO_NOT_REMOVE#
 
