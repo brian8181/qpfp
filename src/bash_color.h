@@ -60,4 +60,3 @@ const string FMT_BG_WHITE          = "\033[107m";
 
 
 #endif
-

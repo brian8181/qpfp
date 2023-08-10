@@ -116,5 +116,3 @@ void qmatch(const string& sexpress, const string& input, /* out */ vector<smatch
         matches.push_back(match);
     }
 }
-
-
