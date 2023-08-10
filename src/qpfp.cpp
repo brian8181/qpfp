@@ -79,6 +79,11 @@ void match(string input)
 	rhs = op+1;
 	cout << "binary (+ or -) operation ..." << endl;
 	cout << *lhs << *op << *rhs << endl;
+
+
+	op = find_Last_open_paren(tokens);
+	cout << "last ( ..." << endl;
+	cout << "op=" << &op << " *op=" << *op << endl; 
 	
 	cout << "opers ..." << endl;
 	vector<string> opers;

@@ -23,7 +23,7 @@ all: $(APPNAME)
 
 # link
 $(APPNAME): $(APPNAME).o main.o utility.o
-	 $(CXX) $(CXXFLAGS) -o $(BUILD)/$(APPNAME) $(BUILD)/$(APPNAME).o $(BUILD)/main.o $(BUILD)/utility.o #@@CLASS_NAME@@
+	 $(CXX) $(CXXFLAGS) -o $(BUILD)/$(APPNAME) $(BUILD)/$(APPNAME).o $(BUILD)/main.o $(BUILD)/utility.o
 
 # compile only
 $(APPNAME).o: 

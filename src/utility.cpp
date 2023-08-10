@@ -29,6 +29,22 @@ const vector<string>::const_iterator find_first_of_mult_div_operator(const vecto
     return op;
 }
 
+const vector<string>::const_iterator find_Last_open_paren(const vector<string>& input)
+{
+    auto beg = input.begin();
+    auto end = input.end();
+    auto op = std::find(beg, end, "(");
+    return op;
+}
+
+const vector<string>::const_iterator find_Last_close_paren(const vector<string>& input)
+{
+    auto beg = input.begin();
+    auto end = input.end();
+    auto op = std::find(beg, end, "(");
+    return op;
+}
+
 const vector<string>::const_iterator find_exp_operator(const vector<string>& input)
 {
     auto beg = input.begin();
