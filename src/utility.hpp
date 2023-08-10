@@ -11,6 +11,7 @@
 #include <vector>
 #include <regex>
 
+const std::vector<std::string>::const_iterator find_first_of_add_sub_operator(const std::vector<std::string>& input);
 const std::vector<std::string>::const_iterator find_first_of_mult_div_operator(const std::vector<std::string>& input);
 const std::vector<std::string>::const_iterator find_exp_operator(const std::vector<std::string>& input);
 const std::vector<std::string>::const_iterator find_mult_operator(const std::vector<std::string>& input);
