@@ -1,8 +1,8 @@
-// License:    @@LICENSE@@
-// Author:     @@AUTHOR@@
-// File Name:  @@FILE_NAME@@
-// Build Date: @@BUILD_DATE@@
-// Version:    @@VERSION@@
+// License:    GPL
+// Author:     Brian K Preston
+// File Name:  qpfp.cpp
+// Build Date: Sat Aug  5 11:17:18 PM CDT 2023
+// Version:    0.0.1
 
 #ifndef _BASH_COLOR_HPP
 #define _BASH_COLOR_HPP
