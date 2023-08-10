@@ -38,8 +38,8 @@ main.o:
 utility.o: 
 	$(CXX) $(CXXFLAGS) -c $(SRC)/utility.$(EXT) -o $(BUILD)/utility.o
 
-#AUTO_INSERT_POINT_DO_NOT_REMOVE#
 
+#AUTO_INSERT_POINT_DO_NOT_REMOVE#
 
 # install man pages
 .PHONY: man
