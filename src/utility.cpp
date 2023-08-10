@@ -11,6 +11,22 @@ using std::string;
 using std::vector;
 using std::smatch;
 
+const vector<string>::const_iterator find_exp_operator(const vector<string>& input)
+{
+    auto beg = input.begin();
+    auto end = input.end();
+    auto op = std::find(beg, end, "^");
+    return op;
+}
+
+const vector<string>::const_iterator find_mult_operator(const vector<string>& input)
+{
+    auto beg = input.begin();
+    auto end = input.end();
+    auto op = std::find(beg, end, "*");
+    return op;
+}
+
 const vector<string>::const_iterator find_plus_operator(const vector<string>& input)
 {
     auto beg = input.begin();
