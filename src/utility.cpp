@@ -11,6 +11,15 @@ using std::string;
 using std::vector;
 using std::smatch;
 
+const vector<string>::const_iterator find_first_of_mult_div_operator(const vector<string>& input)
+{
+    vector<string> ops = {"*", "/"};
+    auto beg = input.begin();
+    auto end = input.end();
+    auto op = std::find_first_of(beg, end, ops.begin(), ops.end());
+    return op;
+}
+
 const vector<string>::const_iterator find_exp_operator(const vector<string>& input)
 {
     auto beg = input.begin();
@@ -34,13 +43,6 @@ const vector<string>::const_iterator find_plus_operator(const vector<string>& in
     auto op = std::find(beg, end, "+");
     return op;
 }
-
-// const vector<string>::const_iterator find_operator(const vector<string>& beg, const vector<string>& input)
-// {
-//     auto end = input.end();
-//     auto op = std::find(beg, end, "+");
-//     return op;
-// }
 
 void qmatch(const string& sexpress, const string& input, /* out */ vector<string>& matches)
 {

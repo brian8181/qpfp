@@ -68,6 +68,12 @@ void match(string input)
 	cout << "binary * operation ..." << endl;
 	cout << *lhs << *op << *rhs << endl;
 
+	op = find_first_of_mult_div_operator(tokens);
+	lhs = op-1;
+	rhs = op+1;
+	cout << "binary (* or /) operation ..." << endl;
+	cout << *lhs << *op << *rhs << endl;
+
 	cout << "opers ..." << endl;
 	vector<string> opers;
 	qmatch(oper_sexpress, input, opers);
@@ -100,6 +106,32 @@ void match(string input)
 }
 
 void match_groups(string input)
+{
+	const int PLUS = 2;
+	const int EXP = 4;
+	const int MULT = 3;
+	const int DIV = 5;
+	const vector<int> op_map = {PLUS, EXP, MULT, DIV};
+
+	cout << "opers sm ..." << endl;
+	vector<smatch> opers_sm;
+	qmatch(opers_sexpress, input, opers_sm);
+	int ilen = opers_sm.size();
+	cout << "ilen=" << ilen << endl;
+	for(int i = 0; i < ilen; ++i)
+	{
+		int jlen = opers_sexpress_grp_count;
+		cout << "jlen=" << jlen << endl;
+		for(int j = 1; j < jlen; ++j)
+		{
+			if(opers_sm[i][j].matched)
+				cout << "j=" << j << " matched=" << opers_sm[i][0].str() << ", "; 
+		}
+	}
+	cout << endl;
+}
+
+void match_mult_div_group(string input)
 {
 	const int PLUS = 2;
 	const int EXP = 4;
