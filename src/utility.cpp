@@ -6,6 +6,10 @@
 
 #include "utility.hpp"
 
+using std::string;
+using std::vector;
+using std::smatch;
+
 void qmatch(const string& sexpress, const string& input, /* out */ vector<string>& matches)
 {
     std::regex::flag_type REGX_FLAGS = std::regex::ECMAScript;

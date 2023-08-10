@@ -11,8 +11,6 @@
 #include <string>
 #include "bash_color.h"
 
-using std::string;
-
 // constants
 const int NUMBER = 1;
 const int MULT_DIV = 0;
@@ -22,12 +20,12 @@ const int PAREN = 0;
 const int OPEN_PAREN = 5;
 const int CLOSE_PAREN = 5;
 
-const string number_sexpress = "\\d+(\\.\\d*)?";
-const string oper_sexpress = "[-+*/^)(]";
-const string opers_sexpress = "(\\-)|(\\+)|(\\*)|(\\^)|(\\))|(\\()";
-const string paren_sexpress = "[\\)\\(]";
-const string parens_sexpress = "(\\))|(\\()";
-const string binary_op_sexpress = number_sexpress + "\\s+" + "[-+*^]" + "\\s+" + number_sexpress;
+const std::string number_sexpress = "\\d+(\\.\\d*)?";
+const std::string oper_sexpress = "[-+*/^)(]";
+const std::string opers_sexpress = "(\\-)|(\\+)|(\\*)|(\\^)|(\\))|(\\()";
+const std::string paren_sexpress = "[\\)\\(]";
+const std::string parens_sexpress = "(\\))|(\\()";
+const std::string binary_op_sexpress = number_sexpress + "\\s+" + "[-+*^]" + "\\s+" + number_sexpress;
 
 const int opers_sexpress_grp_count = 7;
 const int parens_sexpress_grp_count = 3;
@@ -35,8 +33,8 @@ const int parens_sexpress_grp_count = 3;
 // functions
 void print_help();
 int parse_options(int argc, char* argv[]);
-void match(string input);
-void inner_match(string input);
+void match(std::string input);
+void inner_match(std::string input);
 
 #endif
 

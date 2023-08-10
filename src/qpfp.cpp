@@ -7,7 +7,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <map>
 #include <regex>
 #include "utility.hpp"
 #include "qpfp.hpp"

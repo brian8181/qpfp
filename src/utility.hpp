@@ -11,12 +11,8 @@
 #include <vector>
 #include <regex>
 
-using std::string;
-using std::vector;
-using std::smatch;
-
-void qmatch(const string& sexpress, const string& input, /* out */ vector<string>& matches);
-void qmatch(const string& sexpress, const string& input, /* out */  vector<smatch>& matches);
+void qmatch(const std::string& sexpress, const std::string& input, /* out */ std::vector<std::string>& matches);
+void qmatch(const std::string& sexpress, const std::string& input, /* out */  std::vector<std::smatch>& matches);
 
 #endif
 
