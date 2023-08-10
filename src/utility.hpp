@@ -13,6 +13,9 @@
 
 const std::vector<std::string>::const_iterator find_first_of_add_sub_operator(const std::vector<std::string>& input);
 const std::vector<std::string>::const_iterator find_first_of_mult_div_operator(const std::vector<std::string>& input);
+const std::vector<std::string>::const_iterator find_matching_paren(const std::vector<std::string>& input);
+const std::vector<std::string>::const_iterator find_matching_brace(const std::vector<std::string>& input);
+const std::vector<std::string>::const_iterator find_matching_curly_brace(const std::vector<std::string>& input);
 const std::vector<std::string>::const_iterator find_Last_open_paren(const std::vector<std::string>& input);
 const std::vector<std::string>::const_iterator find_Last_close_paren(const std::vector<std::string>& input);
 const std::vector<std::string>::const_iterator find_exp_operator(const std::vector<std::string>& input);

@@ -29,6 +29,24 @@ const vector<string>::const_iterator find_first_of_mult_div_operator(const vecto
     return op;
 }
 
+const vector<string>::const_iterator find_matching_paren(const vector<string>& input)
+{
+    // todo
+    return input.begin();
+}
+
+const std::vector<std::string>::const_iterator find_matching_brace(const std::vector<std::string>& input)
+{
+    // todo
+    return input.begin();
+}
+
+const std::vector<std::string>::const_iterator find_matching_curly_brace(const std::vector<std::string>& input)
+{
+    // todo
+    return input.begin();
+}
+
 const vector<string>::const_iterator find_Last_open_paren(const vector<string>& input)
 {
     auto beg = input.begin();
