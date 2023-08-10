@@ -15,9 +15,16 @@ const vector<string>::const_iterator find_operator(const vector<string>& input)
 {
     auto beg = input.begin();
     auto end = input.end();
-    auto iter = std::find(beg, end, "+");
-    return iter;
+    auto op = std::find(beg, end, "+");
+    return op;
 }
+
+// const vector<string>::const_iterator find_operator(const vector<string>& beg, const vector<string>& input)
+// {
+//     auto end = input.end();
+//     auto op = std::find(beg, end, "+");
+//     return op;
+// }
 
 void qmatch(const string& sexpress, const string& input, /* out */ vector<string>& matches)
 {
