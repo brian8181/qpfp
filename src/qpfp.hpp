@@ -34,7 +34,7 @@ const int parens_sexpress_grp_count = 3;
 void print_help();
 int parse_options(int argc, char* argv[]);
 void match(std::string input);
-void inner_match(std::string input);
+void match_groups(std::string input);
 
 #endif
 

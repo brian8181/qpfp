@@ -15,15 +15,28 @@ using namespace std;
 
 void print_help()
 {
-	string help = "qpfp [OPTION]... [INPUT]...";
+	string help = "qpfp [-h] [INPUT]";
 	std::cout << help << std::endl;
 }
 
 int parse_options(int argc, char* argv[])
 {
+	if(argc != 2)
+	{
+		cout << "error: no input, or too many inputs ..." << endl;
+		print_help();
+		return -1;
+	}
+	
 	string input = argv[1];
+	if(input == "-h")
+	{
+		print_help();
+		return 0;
+	}
+
 	match(input);
-	inner_match(input);
+	match_groups(input);
 	return 0;
 }
 
@@ -72,7 +85,7 @@ void match(string input)
 	cout << endl;
 }
 
-void inner_match(string input)
+void match_groups(string input)
 {
 	const int PLUS = 2;
 	const int EXP = 4;
