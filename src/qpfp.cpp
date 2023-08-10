@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <regex>
+#include <algorithm>
 #include "utility.hpp"
 #include "qpfp.hpp"
 
@@ -53,6 +54,13 @@ void match(string input)
 		cout << tokens[i] << ", ";
 	}
 	cout << endl;
+
+	auto op = find_operator(tokens);
+	auto lhs = op-1;
+	auto rhs = op+1;
+
+	cout << "binary operation ..." << endl;
+	cout << *lhs << *op << *rhs << endl;
 
 	cout << "opers ..." << endl;
 	vector<string> opers;

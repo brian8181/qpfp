@@ -5,10 +5,19 @@
 // Version:    0.0.1
 
 #include "utility.hpp"
+#include <algorithm>
 
 using std::string;
 using std::vector;
 using std::smatch;
+
+const vector<string>::const_iterator find_operator(const vector<string>& input)
+{
+    auto beg = input.begin();
+    auto end = input.end();
+    auto iter = std::find(beg, end, "+");
+    return iter;
+}
 
 void qmatch(const string& sexpress, const string& input, /* out */ vector<string>& matches)
 {
