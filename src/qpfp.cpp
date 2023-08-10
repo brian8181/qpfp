@@ -57,7 +57,7 @@ void match(string input)
 
 	// create binary operations from tokens
 	string PLUS = "+";
-	auto op = find_operator(tokens);
+	auto op = find_plus_operator(tokens);
 	auto lhs = op-1;
 	auto rhs = op+1;
 	cout << "binary operation ..." << endl;

@@ -11,7 +11,7 @@ using std::string;
 using std::vector;
 using std::smatch;
 
-const vector<string>::const_iterator find_operator(const vector<string>& input)
+const vector<string>::const_iterator find_plus_operator(const vector<string>& input)
 {
     auto beg = input.begin();
     auto end = input.end();

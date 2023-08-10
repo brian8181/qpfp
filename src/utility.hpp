@@ -11,7 +11,7 @@
 #include <vector>
 #include <regex>
 
-const std::vector<std::string>::const_iterator find_operator(const std::vector<std::string>& input);
+const std::vector<std::string>::const_iterator find_plus_operator(const std::vector<std::string>& input);
 void qmatch(const std::string& sexpress, const std::string& input, /* out */ std::vector<std::string>& matches);
 void qmatch(const std::string& sexpress, const std::string& input, /* out */  std::vector<std::smatch>& matches);
 
