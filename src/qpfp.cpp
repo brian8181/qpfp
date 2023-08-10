@@ -29,7 +29,7 @@ int parse_options(int argc, char* argv[])
 }
 
 void match(string input)
-{
+{	
 	const string tokens_sexpress = "(" + number_sexpress + ")|(" + oper_sexpress + ")|(" + "[\\)\\(]" + ")";
 
 	cout << "tokens ..." << endl;
@@ -88,7 +88,7 @@ void inner_match(string input)
 	cout << "ilen=" << ilen << endl;
 	for(int i = 0; i < ilen; ++i)
 	{
-		int jlen = opers_sexpress.size();
+		int jlen = opers_sexpress_grp_count;
 		cout << "jlen=" << jlen << endl;
 		for(int j = 1; j < jlen; ++j)
 		{

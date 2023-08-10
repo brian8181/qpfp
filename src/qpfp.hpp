@@ -29,6 +29,9 @@ const string paren_sexpress = "[\\)\\(]";
 const string parens_sexpress = "(\\))|(\\()";
 const string binary_op_sexpress = number_sexpress + "\\s+" + "[-+*^]" + "\\s+" + number_sexpress;
 
+const int opers_sexpress_grp_count = 7;
+const int parens_sexpress_grp_count = 3;
+
 // functions
 void print_help();
 int parse_options(int argc, char* argv[]);
