@@ -79,11 +79,17 @@ const vector<string>::const_iterator find_mult_operator(const vector<string>& in
     return op;
 }
 
+// const vector<string>::const_iterator find_plus_operator(const vector<string>& input, vector<string>::size_type pos = 0)
+// {
+
+// }
+
 const vector<string>::const_iterator find_plus_operator(const vector<string>& input)
 {
+    //vector<string>::size_type pos = 0;
     auto beg = input.begin();
     auto end = input.end();
-    auto op = std::find(beg, end, "+");
+    auto op = find(beg, end, "+");
     return op;
 }
 
