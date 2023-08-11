@@ -47,7 +47,7 @@ const std::vector<std::string>::const_iterator find_match_ccurly_brace(const std
     return input.begin();
 }
 
-const vector<string>::const_iterator find_Last_open_paren(const vector<string>& input)
+const vector<string>::const_iterator find_Last_oparen(const vector<string>& input)
 {
     auto beg = input.begin();
     auto end = input.end();
@@ -55,7 +55,7 @@ const vector<string>::const_iterator find_Last_open_paren(const vector<string>& 
     return op;
 }
 
-const vector<string>::const_iterator find_Last_close_paren(const vector<string>& input)
+const vector<string>::const_iterator find_Last_cparen(const vector<string>& input)
 {
     auto beg = input.begin();
     auto end = input.end();

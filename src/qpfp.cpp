@@ -81,7 +81,7 @@ void match(string input)
 	cout << *lhs << *op << *rhs << endl;
 
 
-	op = find_Last_open_paren(tokens);
+	op = find_Last_oparen(tokens);
 	cout << "last ( ..." << endl;
 	cout << "op=" << &op << " *op=" << *op << endl; 
 	
