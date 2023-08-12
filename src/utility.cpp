@@ -89,7 +89,7 @@ const std::vector<std::string>::const_iterator find_mult_operator(const std::vec
 
 const vector<string>::const_iterator find_plus_operator(const vector<string>& input)
 {
-   return find_plus_operator(input, input.begin());;
+   return find_plus_operator(input, input.begin());
 }
 
 const vector<string>::const_iterator find_plus_operator(const vector<string>& input, const vector<string>::const_iterator& beg)
@@ -98,6 +98,19 @@ const vector<string>::const_iterator find_plus_operator(const vector<string>& in
     auto op = find(beg, end, "+");
     return op;
 }
+
+// const std::vector<std::string>::const_iterator find_plus_operators(const std::vector<std::string>& input)
+// {
+//     // const std::vector<std::string>::const_iterator beg = input.begin();
+//     // const std::vector<std::string>::const_iterator end = input.end();
+//     // const std::vector<std::string>::const_iterator op;
+//     // int i = 0;
+//     // while(beg != end)
+//     // {
+//     //     op = find_plus_operator(input, op+i);
+//     //     ++i;
+//     // }
+// }
 
 void qmatch(const string& sexpress, const string& input, /* out */ vector<string>& matches)
 {
