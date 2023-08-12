@@ -187,18 +187,14 @@ const std::vector<std::string>::const_iterator find_all_plus_operators(const std
 {
 	std::vector<std::string>::const_iterator op = beg;
     const std::vector<std::string>::const_iterator end = input.end();
- 
-    int i = 0;
 
     while(beg != end)
     {
-        op = find_plus_operator(input, op+i);
+        op = find_plus_operator(input, op++);
 		auto lhs = op-1;
 		auto rhs = op+1;
 		cout << "binary + operation ..." << endl;
 		cout << *lhs << *op << *rhs << endl;
-        ++i;
     }
-
     return op;
 }
