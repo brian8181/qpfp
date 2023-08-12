@@ -25,6 +25,7 @@ const std::vector<std::string>::const_iterator find_mult_operator(const std::vec
 const std::vector<std::string>::const_iterator find_mult_operator(const std::vector<std::string>& input, const std::vector<std::string>::const_iterator& beg);
 const std::vector<std::string>::const_iterator find_plus_operator(const std::vector<std::string>& input);
 const std::vector<std::string>::const_iterator find_plus_operator(const std::vector<std::string>& input, const std::vector<std::string>::const_iterator& beg);
+const std::vector<std::string>::const_iterator find_all_plus_operators(const std::vector<std::string>& input);
 
 //const std::vector<std::string>::const_iterator find_plus_operator(const std::vector<std::string>& input, vector<string>::size_type pos);
 
