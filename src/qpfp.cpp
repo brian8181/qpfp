@@ -69,6 +69,9 @@ void match(string input)
 	cout << "overload, binary + operation ..." << endl;
 	cout << *lhs << *op << *rhs << endl;
 
+	// all
+	//find_all_plus_operators(tokens);
+
 	op = find_mult_operator(tokens);
 	lhs = op-1;
 	rhs = op+1;
@@ -177,9 +180,14 @@ void match_mult_div_group(string input)
 
 const std::vector<std::string>::const_iterator find_all_plus_operators(const std::vector<std::string>& input)
 {
-    const std::vector<std::string>::const_iterator beg = input.begin();
+	return find_all_plus_operators(input, input.begin());
+}
+
+const std::vector<std::string>::const_iterator find_all_plus_operators(const std::vector<std::string>& input, const std::vector<string>::const_iterator& beg)
+{
+	std::vector<std::string>::const_iterator op = beg;
     const std::vector<std::string>::const_iterator end = input.end();
-    std::vector<std::string>::const_iterator op;
+ 
     int i = 0;
 
     while(beg != end)
