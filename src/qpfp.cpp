@@ -62,6 +62,13 @@ void match(string input)
 	cout << "binary + operation ..." << endl;
 	cout << *lhs << *op << *rhs << endl;
 
+	// overload
+	op = find_plus_operator(tokens, tokens.begin());
+	lhs = op-1;
+	rhs = op+1;
+	cout << "overload, binary + operation ..." << endl;
+	cout << *lhs << *op << *rhs << endl;
+
 	op = find_mult_operator(tokens);
 	lhs = op-1;
 	rhs = op+1;

@@ -93,6 +93,13 @@ const vector<string>::const_iterator find_plus_operator(const vector<string>& in
     return op;
 }
 
+const vector<string>::const_iterator find_plus_operator(const vector<string>& input, const vector<string>::const_iterator& beg)
+{
+    auto end = input.end();
+    auto op = find(beg, end, "+");
+    return op;
+}
+
 void qmatch(const string& sexpress, const string& input, /* out */ vector<string>& matches)
 {
     std::regex::flag_type REGX_FLAGS = std::regex::ECMAScript;
