@@ -174,3 +174,23 @@ void match_mult_div_group(string input)
 	}
 	cout << endl;
 }
+
+const std::vector<std::string>::const_iterator find_all_plus_operators(const std::vector<std::string>& input)
+{
+    const std::vector<std::string>::const_iterator beg = input.begin();
+    const std::vector<std::string>::const_iterator end = input.end();
+    std::vector<std::string>::const_iterator op;
+    int i = 0;
+
+    while(beg != end)
+    {
+        op = find_plus_operator(input, op+i);
+		auto lhs = op-1;
+		auto rhs = op+1;
+		cout << "binary + operation ..." << endl;
+		cout << *lhs << *op << *rhs << endl;
+        ++i;
+    }
+
+    return op;
+}

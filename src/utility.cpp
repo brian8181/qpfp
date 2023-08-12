@@ -99,22 +99,6 @@ const vector<string>::const_iterator find_plus_operator(const vector<string>& in
     return op;
 }
 
-const std::vector<std::string>::const_iterator find_all_plus_operators(const std::vector<std::string>& input)
-{
-    const std::vector<std::string>::const_iterator beg = input.begin();
-    const std::vector<std::string>::const_iterator end = input.end();
-    std::vector<std::string>::const_iterator op;
-    int i = 0;
-
-    while(beg != end)
-    {
-        op = find_plus_operator(input, op+i);
-        ++i;
-    }
-
-    return op;
-}
-
 void qmatch(const string& sexpress, const string& input, /* out */ vector<string>& matches)
 {
     std::regex::flag_type REGX_FLAGS = std::regex::ECMAScript;
