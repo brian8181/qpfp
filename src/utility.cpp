@@ -65,10 +65,7 @@ const vector<string>::const_iterator find_Last_cparen(const vector<string>& inpu
 
 const vector<string>::const_iterator find_exp_operator(const vector<string>& input)
 {
-    auto beg = input.begin();
-    auto end = input.end();
-    auto op = std::find(beg, end, "^");
-    return op;
+    return find_exp_operator(input, input.begin());
 }
 
 const std::vector<std::string>::const_iterator find_exp_operator(const std::vector<std::string>& input, const std::vector<std::string>::const_iterator& beg)
@@ -80,10 +77,7 @@ const std::vector<std::string>::const_iterator find_exp_operator(const std::vect
 
 const vector<string>::const_iterator find_mult_operator(const vector<string>& input)
 {
-    auto beg = input.begin();
-    auto end = input.end();
-    auto op = std::find(beg, end, "*");
-    return op;
+    return find_mult_operator(input, input.begin());
 }
 
 const std::vector<std::string>::const_iterator find_mult_operator(const std::vector<std::string>& input, const std::vector<std::string>::const_iterator& beg)
@@ -99,11 +93,7 @@ const std::vector<std::string>::const_iterator find_mult_operator(const std::vec
 
 const vector<string>::const_iterator find_plus_operator(const vector<string>& input)
 {
-    //vector<string>::size_type pos = 0;
-    auto beg = input.begin();
-    auto end = input.end();
-    auto op = find(beg, end, "+");
-    return op;
+   return find_plus_operator(input, input.begin());;
 }
 
 const vector<string>::const_iterator find_plus_operator(const vector<string>& input, const vector<string>::const_iterator& beg)
