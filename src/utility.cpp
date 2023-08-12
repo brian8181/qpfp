@@ -105,13 +105,14 @@ const std::vector<std::string>::const_iterator find_all_plus_operators(const std
     const std::vector<std::string>::const_iterator end = input.end();
     const std::vector<std::string>::const_iterator op;
     int i = 0;
-//     // while(beg != end)
-//     // {
-//     //     op = find_plus_operator(input, op+i);
-//     //     ++i;
-//     // }
 
-    return input.begin();
+    while(beg != end)
+    {
+        //op = find_plus_operator(input, op+i);
+        ++i;
+    }
+
+    return op;
 }
 
 void qmatch(const string& sexpress, const string& input, /* out */ vector<string>& matches)
