@@ -20,10 +20,14 @@ const std::vector<std::string>::const_iterator find_Last_oparen(const std::vecto
 const std::vector<std::string>::const_iterator find_Last_cparen(const std::vector<std::string>& input);
 const std::vector<std::string>::const_iterator find__oparen_operator(const std::vector<std::string>& input);
 const std::vector<std::string>::const_iterator find_exp_operator(const std::vector<std::string>& input);
+const std::vector<std::string>::const_iterator find_exp_operator(const std::vector<std::string>& input, const std::vector<std::string>::const_iterator& beg);
 const std::vector<std::string>::const_iterator find_mult_operator(const std::vector<std::string>& input);
+const std::vector<std::string>::const_iterator find_mult_operator(const std::vector<std::string>& input, const std::vector<std::string>::const_iterator& beg);
 const std::vector<std::string>::const_iterator find_plus_operator(const std::vector<std::string>& input);
 const std::vector<std::string>::const_iterator find_plus_operator(const std::vector<std::string>& input, const std::vector<std::string>::const_iterator& beg);
+
 //const std::vector<std::string>::const_iterator find_plus_operator(const std::vector<std::string>& input, vector<string>::size_type pos);
+
 void qmatch(const std::string& sexpress, const std::string& input, /* out */ std::vector<std::string>& matches);
 void qmatch(const std::string& sexpress, const std::string& input, /* out */  std::vector<std::smatch>& matches);
 

@@ -71,6 +71,13 @@ const vector<string>::const_iterator find_exp_operator(const vector<string>& inp
     return op;
 }
 
+const std::vector<std::string>::const_iterator find_exp_operator(const std::vector<std::string>& input, const std::vector<std::string>::const_iterator& beg)
+{
+    auto end = input.end();
+    auto op = std::find(beg, end, "^");
+    return op;
+}
+
 const vector<string>::const_iterator find_mult_operator(const vector<string>& input)
 {
     auto beg = input.begin();
@@ -79,9 +86,15 @@ const vector<string>::const_iterator find_mult_operator(const vector<string>& in
     return op;
 }
 
+const std::vector<std::string>::const_iterator find_mult_operator(const std::vector<std::string>& input, const std::vector<std::string>::const_iterator& beg)
+{
+    auto end = input.end();
+    auto op = std::find(beg, end, "*");
+    return op;
+}
+
 // const vector<string>::const_iterator find_plus_operator(const vector<string>& input, vector<string>::size_type pos = 0)
 // {
-
 // }
 
 const vector<string>::const_iterator find_plus_operator(const vector<string>& input)
