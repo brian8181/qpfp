@@ -63,11 +63,28 @@ void match(string input)
 	cout << *lhs << *op << *rhs << endl;
 
 	// overload
-	op = find_plus_operator(tokens, op+1);
-	lhs = op-1;
-	rhs = op+1;
-	cout << "overload, binary + operation ..." << endl;
-	cout << *lhs << *op << *rhs << endl;
+	// op = find_plus_operator(tokens, op+1);
+	// lhs = op-1;
+	// rhs = op+1;
+	// cout << "overload, binary + operation ..." << endl;
+	// cout << *lhs << *op << *rhs << endl;
+
+	// op = find_plus_operator(tokens, op+2);
+	// lhs = op-1;
+	// rhs = op+1;
+	// cout << "overload, binary + operation ..." << endl;
+	// cout << *lhs << *op << *rhs << endl;
+
+	int i = 1;
+	while(op+i != tokens.end())
+	{
+		op = find_plus_operator(tokens, op+i);
+		lhs = op-1;
+		rhs = op+1;
+		cout << "overload, binary + operation ..." << endl;
+		cout << *lhs << *op << *rhs << endl;
+		i++;
+	}
 
 	// all
 	//find_all_plus_operators(tokens);
@@ -180,15 +197,16 @@ void match_mult_div_group(string input)
 
 const std::vector<std::string>::const_iterator find_all_plus_operators(const std::vector<std::string>& input)
 {
-	return find_all_plus_operators(input, input.begin());
+	std::vector<std::string>::const_iterator beg = input.begin();
+	return find_all_plus_operators(input, beg);
 }
 
-const std::vector<std::string>::const_iterator find_all_plus_operators(const std::vector<std::string>& input, const std::vector<string>::const_iterator& beg)
+const std::vector<std::string>::const_iterator find_all_plus_operators(const std::vector<std::string>& input, std::vector<string>::const_iterator& beg)
 {
 	std::vector<std::string>::const_iterator op = beg;
     const std::vector<std::string>::const_iterator end = input.end();
 
-    while(beg != end)
+    while(op != end)
     {
         op = find_plus_operator(input, op++);
 		auto lhs = op-1;
