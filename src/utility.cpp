@@ -11,6 +11,20 @@ using std::string;
 using std::vector;
 using std::smatch;
 
+// const vector<string>::const_iterator find_match_cparen(const vector<string>& input, vector<string>::const_iterator& oparen)
+// {
+//     vector<string> ops = {"(", ")"};
+//     auto end = input.end();
+
+//     while(oparen != end)
+//     {
+//         auto paren = std::find_first_of(oparen, end, ops.begin(), ops.end());
+//         if(*paren == ")")
+//             return paren;
+//     }
+//     return end;
+// }
+
 const vector<string>::const_iterator find_first_of_add_sub_operator(const vector<string>& input)
 {
     vector<string> ops = {"+", "-"};
@@ -26,48 +40,6 @@ const vector<string>::const_iterator find_first_of_mult_div_operator(const vecto
     auto beg = input.begin();
     auto end = input.end();
     auto op = std::find_first_of(beg, end, ops.begin(), ops.end());
-    return op;
-}
-
-const vector<string>::const_iterator find_match_cparen(const vector<string>& input, vector<string>::const_iterator& oparen)
-{
-    vector<string> ops = {"(", ")"};
-    auto end = input.end();
-
-    while(oparen != end)
-    {
-        auto paren = std::find_first_of(oparen, end, ops.begin(), ops.end());
-        if(*paren == ")")
-            return paren;
-    }
-    return end;
-}
-
-const std::vector<std::string>::const_iterator find_match_cbrace(const std::vector<std::string>& input)
-{
-    // todo
-    return input.begin();
-}
-
-const std::vector<std::string>::const_iterator find_match_ccurly_brace(const std::vector<std::string>& input)
-{
-    // todo
-    return input.begin();
-}
-
-const vector<string>::const_iterator find_Last_oparen(const vector<string>& input)
-{
-    auto beg = input.begin();
-    auto end = input.end();
-    auto op = std::find(beg, end, "(");
-    return op;
-}
-
-const vector<string>::const_iterator find_Last_cparen(const vector<string>& input)
-{
-    auto beg = input.begin();
-    auto end = input.end();
-    auto op = std::find(beg, end, "(");
     return op;
 }
 

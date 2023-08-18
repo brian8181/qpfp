@@ -108,10 +108,6 @@ void match(string input)
 	cout << *lhs << *op << *rhs << endl;
 
 
-	op = find_Last_oparen(tokens);
-	cout << "last ( ..." << endl;
-	cout << "op=" << &op << " *op=" << *op << endl; 
-	
 	cout << "opers ..." << endl;
 	vector<string> opers;
 	qmatch(oper_sexpress, input, opers);
@@ -142,14 +138,18 @@ void match(string input)
 	}
 	cout << endl;
 
-	// auto beg = tokens.begin();
-	// auto end = tokens.end();
-	// auto cparen = std::find(beg, end, ")");
 
-	// std::vector<string>::reverse_iterator rbeg = tokens.rbegin();
-	// std::vector<string>::reverse_iterator rend = tokens.rend();
-	// auto oparen = std::find(rbeg, rend, "(");
-
+	// find closing paren then reverse find next opening paren
+	auto beg = tokens.begin();
+	auto end = tokens.end();
+	// this is the closing paren
+	auto cparen = std::find(beg, end, ")");
+	
+	std::vector<string>::reverse_iterator rbeg = tokens.rbegin();
+	std::vector<string>::reverse_iterator rend = tokens.rend();
+	// this is the opening paren
+	auto oparen = std::find(rbeg, rend, "(");
+	//auto oparen = std::find(cparen, rend, "(");
 }
 
 void match_groups(string input)
@@ -202,23 +202,6 @@ void match_mult_div_group(string input)
 		}
 	}
 	cout << endl;
-}
-
-void _find_all_plus_operators(const std::vector<std::string>::const_iterator& tokens)
-{
-	//auto op = find_plus_operator(tokens);
-	// auto lhs = op-1;
-	// auto rhs = op+1;
-
-	// op = find_plus_operator(tokens, op-1);
-	// while(op++  != tokens.end())
-	// {
-	// 	op = find_plus_operator(tokens, op);
-	// 	lhs = op-1;
-	// 	rhs = op+1;
-	// 	cout << "overload, binary + operation ..." << endl;
-	// 	cout << *lhs << *op << *rhs << endl;
-	// }
 }
 
 const std::vector<std::string>::const_iterator find_all_plus_operators(const std::vector<std::string>& input)
