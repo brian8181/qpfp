@@ -141,6 +141,15 @@ void match(string input)
 		cout << opers_alt[i] << ", ";
 	}
 	cout << endl;
+
+	// auto beg = tokens.begin();
+	// auto end = tokens.end();
+	// auto cparen = std::find(beg, end, ")");
+
+	// std::vector<string>::reverse_iterator rbeg = tokens.rbegin();
+	// std::vector<string>::reverse_iterator rend = tokens.rend();
+	// auto oparen = std::find(rbeg, rend, "(");
+
 }
 
 void match_groups(string input)
