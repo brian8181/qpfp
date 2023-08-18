@@ -29,10 +29,18 @@ const vector<string>::const_iterator find_first_of_mult_div_operator(const vecto
     return op;
 }
 
-const vector<string>::const_iterator find_match_cparen(const vector<string>& input)
+const vector<string>::const_iterator find_match_cparen(const vector<string>& input, vector<string>::const_iterator& oparen)
 {
-    // todo
-    return input.begin();
+    vector<string> ops = {"(", ")"};
+    auto end = input.end();
+
+    while(oparen != end)
+    {
+        auto paren = std::find_first_of(oparen, end, ops.begin(), ops.end());
+        if(*paren == ")")
+            return paren;
+    }
+    return end;
 }
 
 const std::vector<std::string>::const_iterator find_match_cbrace(const std::vector<std::string>& input)

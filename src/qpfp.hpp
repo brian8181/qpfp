@@ -36,6 +36,7 @@ void print_help();
 int parse_options(int argc, char* argv[]);
 void match(std::string input);
 void match_groups(std::string input);
+void _find_all_plus_operators(const std::vector<std::string>& input);
 const std::vector<std::string>::const_iterator find_all_plus_operators(const std::vector<std::string>& input);
 const std::vector<std::string>::const_iterator find_all_plus_operators(const std::vector<std::string>& input, std::vector<std::string>::const_iterator& beg);
 
