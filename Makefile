@@ -11,7 +11,11 @@ SRC = ~/src/qpfp/src
 all: $(APPNAME)
 # link
 $(APPNAME): $(APPNAME).o main.o utility.o
-	 $(CXX) $(CXXFLAGS) -o $(BUILD)/$(APPNAME) $(BUILD)/$(APPNAME).o $(BUILD)/main.o $(BUILD)/utility.o
+	$(CXX) $(CXXFLAGS) -o $(BUILD)/$(APPNAME) $(BUILD)/$(APPNAME).o $(BUILD)/main.o $(BUILD)/utility.o
+
+mtest: utility.o
+	$(CXX) $(CXXFLAGS) -c $(SRC)/mtest.cpp -o $(BUILD)/mtest.o
+	$(CXX) $(CXXFLAGS) $(BUILD)/mtest.o $(BUILD)/utility.o -o $(BUILD)/mtest
 
 # compile only
 $(APPNAME).o: 
