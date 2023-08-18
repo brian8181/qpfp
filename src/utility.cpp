@@ -11,19 +11,33 @@ using std::string;
 using std::vector;
 using std::smatch;
 
-// const vector<string>::const_iterator find_match_cparen(const vector<string>& input, vector<string>::const_iterator& oparen)
-// {
-//     vector<string> ops = {"(", ")"};
-//     auto end = input.end();
-
-//     while(oparen != end)
-//     {
-//         auto paren = std::find_first_of(oparen, end, ops.begin(), ops.end());
-//         if(*paren == ")")
-//             return paren;
-//     }
-//     return end;
-// }
+void find_sub_expr(string input)
+{
+    vector<std::pair<int, int>> pairs;
+    int len = input.size();
+    int i = 0;
+    int cpos = 0;
+    int opos = 0;
+    while(i < len)
+    {
+        if(input[i] == ')')
+        {
+            cpos = i;
+            while(i >= 0)
+            {
+                if(input[i] != '(')
+                {
+                    opos = i;
+                    pairs.push_back(std::pair<int,int>(opos, cpos));
+                    i = cpos;
+                    continue;
+                }
+                --i;
+            }
+        }
+        ++i;
+    }
+}
 
 const vector<string>::const_iterator find_first_of_add_sub_operator(const vector<string>& input)
 {
