@@ -139,16 +139,16 @@ void match(string input)
 	cout << endl;
 
 	// find closing paren then reverse find next opening paren
-	auto beg = tokens.begin();
-	auto end = tokens.end();
-	// this is the closing paren
-	auto cparen = std::find(beg, end, ")");
+	// auto beg = tokens.begin();
+	// auto end = tokens.end();
+	// // this is the closing paren
+	// // auto cparen = std::find(beg, end, ")");
 	
-	std::vector<string>::reverse_iterator rbeg = tokens.rbegin();
-	std::vector<string>::reverse_iterator rend = tokens.rend();
-	// this is the opening paren
-	auto oparen = std::find(rbeg, rend, "(");
-	//auto oparen = std::find(cparen, rend, "(");
+	// std::vector<string>::reverse_iterator rbeg = tokens.rbegin();
+	// std::vector<string>::reverse_iterator rend = tokens.rend();
+	// // this is the opening paren
+	// // auto oparen = std::find(rbeg, rend, "(");
+	// //auto oparen = std::find(cparen, rend, "(");
 }
 
 void match_groups(string input)

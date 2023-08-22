@@ -4,6 +4,7 @@
 // Build Date: Sat Aug  5 11:17:18 PM CDT 2023
 // Version:    0.0.1
 
+#include <iostream> //debug
 #include "utility.hpp"
 #include <algorithm>
 
@@ -11,31 +12,40 @@ using std::string;
 using std::vector;
 using std::smatch;
 
-void find_sub_expr(string input)
+void find_sub_expr(const std::string& input)
 {
+    //debug
+    std::cout << "find_sub_expr... " << input << std::endl;
     vector<std::pair<int, int>> pairs;
     int len = input.size();
     int i = 0;
     int cpos = 0;
     int opos = 0;
-    while(i < len)
+
+     //debug
+    std::cout << "i=" << i << std::endl;
+    while(i < len)  
     {
         if(input[i] == ')')
         {
+            std::cout << "input[i]=" << input[i] << std::endl;
             cpos = i;
             while(i >= 0)
             {
                 if(input[i] != '(')
                 {
+                    std::cout << "input[i]=" << input[i] << std::endl;
                     opos = i;
                     pairs.push_back(std::pair<int,int>(opos, cpos));
                     i = cpos;
                     continue;
                 }
                 --i;
+                std::cout << "i=" << i << std::endl;
             }
         }
         ++i;
+        std::cout << "i=" << i << std::endl;
     }
 }
 
