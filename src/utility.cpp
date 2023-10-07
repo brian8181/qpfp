@@ -47,6 +47,8 @@ void find_sub_expr(const std::string& input)
                 if(input[i] == '(')
                 {
                     opos = i;
+                    int len1 = (cpos+1)-opos;
+                    int len2 = (cpos)-(opos+1);
                     string sub_exp = input.substr(opos, (cpos+1)-opos);
                     string sub_string = input.substr(opos+1, (cpos)-(opos+1));
                     std::cout << "Sub Expression: " << sub_exp  << std::endl;

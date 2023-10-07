@@ -10,10 +10,10 @@ SRC = ~/src/qpfp/src
 
 all: $(APPNAME) mtest
 # link
-$(APPNAME): $(APPNAME).o main.o utility.o
+$(APPNAME): $(APPNAME).o main.o utility.o terminalnode.o
 	$(CXX) $(CXXFLAGS) -o $(BUILD)/$(APPNAME) $(BUILD)/$(APPNAME).o $(BUILD)/main.o $(BUILD)/utility.o
 
-mtest: utility.o
+mtest: utility.o terminalnode.o
 	$(CXX) $(CXXFLAGS) -c $(SRC)/mtest.cpp -o $(BUILD)/mtest.o
 	$(CXX) $(CXXFLAGS) $(BUILD)/mtest.o $(BUILD)/utility.o -o $(BUILD)/mtest
 
@@ -26,6 +26,13 @@ main.o:
 
 utility.o: 
 	$(CXX) $(CXXFLAGS) -c $(SRC)/utility.$(EXT) -o $(BUILD)/utility.o
+
+node.o:
+	$(CXX) $(CXXFLAGS) -c $(SRC)/node.$(EXT) -o $(BUILD)/node.o
+
+terminalnode.o: node.o
+	$(CXX) $(CXXFLAGS) -c $(SRC)/terminalnode.$(EXT) -o $(BUILD)/terminalnode.o
+
 
 
 # regular expression where % is a wildcard
