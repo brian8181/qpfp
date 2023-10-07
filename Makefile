@@ -8,7 +8,7 @@ BUILD = ~/src/qpfp/build
 OBJ = ~/src/qpfp/build
 SRC = ~/src/qpfp/src
 
-all: $(APPNAME)
+all: $(APPNAME) mtest
 # link
 $(APPNAME): $(APPNAME).o main.o utility.o
 	$(CXX) $(CXXFLAGS) -o $(BUILD)/$(APPNAME) $(BUILD)/$(APPNAME).o $(BUILD)/main.o $(BUILD)/utility.o
@@ -41,5 +41,4 @@ install: man
 # delete object files & app executable
 .PHONY: clean
 clean:
-	-rm -rf $(OBJ)/*.o 
-	-rm -rf $(BUILD)/$(APPNAME)
+	-rm -rf $(BUILD)/*

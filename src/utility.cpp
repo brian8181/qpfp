@@ -12,6 +12,17 @@ using std::string;
 using std::vector;
 using std::smatch;
 
+
+// :SUB
+// step foreward until ')'
+//  then 
+// step backward until '('
+// then
+// set foreward (match binary expressions) until ')' 
+//   or until step=end then GOTO END
+// GOTO SUB
+// :END
+// 
 void find_sub_expr(const std::string& input)
 {
     //debug
@@ -22,31 +33,33 @@ void find_sub_expr(const std::string& input)
     int cpos = 0;
     int opos = 0;
 
-     //debug
-    std::cout << "i=" << i << std::endl;
+    //debug
     while(i < len)  
     {
+        std::cout << "input[" << i << "]=" << input[i] << std::endl;
         if(input[i] == ')')
         {
-            std::cout << "input[i]=" << input[i] << std::endl;
             cpos = i;
             while(i >= 0)
             {
-                 --i;
-                std::cout << "i=" << i << std::endl;
-                if(input[i] != '(')
+                --i;
+                std::cout << "input[" << i << "]=" << input[i] << std::endl;
+                if(input[i] == '(')
                 {
-                    std::cout << "input[i]=" << input[i] << std::endl;
                     opos = i;
-                    pairs.push_back(std::pair<int,int>(opos, cpos));
-                    //i = cpos;
-                    continue;
+                    string sub_exp = input.substr(opos, (cpos+1)-opos);
+                    string sub_string = input.substr(opos+1, (cpos)-(opos+1));
+                    std::cout << "Sub Expression: " << sub_exp  << std::endl;
+                    std::cout << "Sub String: " << sub_string  << std::endl;
+                    return;
+                    // match rhs
+                    // find op
+                    // match lhs
+                    //??? pairs.push_back(std::pair<int,int>(opos, cpos));
                 }
-                continue;
             }
         }
         ++i;
-        std::cout << "i=" << i << std::endl;
     }
 }
 
