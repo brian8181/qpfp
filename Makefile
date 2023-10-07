@@ -27,6 +27,11 @@ main.o:
 utility.o: 
 	$(CXX) $(CXXFLAGS) -c $(SRC)/utility.$(EXT) -o $(BUILD)/utility.o
 
+
+# regular expression where % is a wildcard
+# %.o:%.c
+# 	$(CC) $(CFLAGS) -c -o $@ $^
+
 # install 
 .PHONY: install
 install: man

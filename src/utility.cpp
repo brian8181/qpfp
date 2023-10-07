@@ -32,16 +32,17 @@ void find_sub_expr(const std::string& input)
             cpos = i;
             while(i >= 0)
             {
+                 --i;
+                std::cout << "i=" << i << std::endl;
                 if(input[i] != '(')
                 {
                     std::cout << "input[i]=" << input[i] << std::endl;
                     opos = i;
                     pairs.push_back(std::pair<int,int>(opos, cpos));
-                    i = cpos;
+                    //i = cpos;
                     continue;
                 }
-                --i;
-                std::cout << "i=" << i << std::endl;
+                continue;
             }
         }
         ++i;
