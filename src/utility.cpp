@@ -55,14 +55,18 @@ void find_sub_expr(const std::string& input)
                     std::cout << "Sub Expression: " << sub_exp  << std::endl;
                     std::cout << "Sub String: " << sub_string  << std::endl;
 
-                    vector<string> matches;
+                    vector<smatch> matches;
                     string expr = R"(\(\s*(\d+)\s*([*/+-])\s*(\d+)\s*\))";
                     qmatch(expr, sub_exp, matches);
 
                     int len = matches.size();
+                   
                     for(int i = 0; i < len; ++i)
                     {
-                        std::cout << "mathches[" << i << "]=" << matches[i] << std::endl;
+                        std::cout << "mathches[" << i << "][0]=" << matches[i][0].str() <<  "   \\\\ sub" << std::endl; // sub
+                        std::cout << "mathches[" << i << "][1]=" << matches[i][1].str() <<  "   \\\\ rhs" << std::endl; // rhs
+                        std::cout << "mathches[" << i << "][2]=" << matches[i][2].str() <<  "   \\\\ op" << std::endl; // op
+                        std::cout << "mathches[" << i << "][3]=" << matches[i][3].str() <<  "   \\\\ lhs" << std::endl; // lhs
                     }
 
                     return;
@@ -70,6 +74,7 @@ void find_sub_expr(const std::string& input)
                     // find op
                     // match lhs
                     //??? pairs.push_back(std::pair<int,int>(opos, cpos));
+
                 }
             }
         }
