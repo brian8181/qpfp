@@ -41,6 +41,7 @@ void find_sub_expr(const std::string& input)
         if(input[i] == ')')
         {
             cpos = i;
+            //--i;
             while(i >= 0)
             {
                 --i;
@@ -69,16 +70,17 @@ void find_sub_expr(const std::string& input)
                         std::cout << "mathches[" << i << "][3]=" << matches[i][3].str() <<  "   \\\\ lhs" << std::endl; // lhs
                     }
 
-                    return;
+                    i = opos;
+                    i = cpos;
+                    //return;
                     // match rhs
                     // find op
                     // match lhs
                     //??? pairs.push_back(std::pair<int,int>(opos, cpos));
-
-
+                    //--i;
                 }
-            }
-        }
+           }
+       }
         ++i;
     }
 }
