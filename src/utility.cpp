@@ -26,31 +26,24 @@ using std::endl;
 // 
 void find_sub_expr(const std::string& input)
 {
-    //debug
-    std::cout << "find_sub_expr... " << input << std::endl;
-    vector<std::pair<int, int>> pairs;
     int len = input.size();
     int i = 0;
     int cpos = 0;
     int opos = 0;
 
-    //debug
     while(i < len)  
     {
         std::cout << "input[" << i << "]=" << input[i] << std::endl;
         if(input[i] == ')')
         {
             cpos = i;
-            //--i;
-            while(i >= 0)
+            while(i > -1)
             {
                 --i;
                 std::cout << "input[" << i << "]=" << input[i] << std::endl;
                 if(input[i] == '(')
                 {
                     opos = i;
-                    // int len1 = (cpos+1)-opos;
-                    // int len2 = (cpos)-(opos+1);
                     string sub_exp = input.substr(opos, (cpos+1)-opos);
                     string sub_string = input.substr(opos+1, (cpos)-(opos+1));
                     std::cout << "Sub Expression: " << sub_exp  << std::endl;
@@ -69,19 +62,13 @@ void find_sub_expr(const std::string& input)
                         std::cout << "mathches[" << i << "][2]=" << matches[i][2].str() <<  "   \\\\ opr" << std::endl; // opr
                         std::cout << "mathches[" << i << "][3]=" << matches[i][3].str() <<  "   \\\\ lhs" << std::endl; // lhs
                     }
-
-                    i = opos;
-                    i = cpos;
-                    //return;
-                    // match rhs
-                    // find op
-                    // match lhs
-                    //??? pairs.push_back(std::pair<int,int>(opos, cpos));
-                    //--i;
-                }
+                    //
+                    return;
+               }
            }
+           i = cpos;
        }
-        ++i;
+    ++i;
     }
 }
 
