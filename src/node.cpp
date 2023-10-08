@@ -1,6 +1,5 @@
 #include "node.hpp"
 
-
 node::node(char c)
 {
     val = string(1, c);
@@ -15,7 +14,6 @@ string node::get_val()
 {
     return val;
 }
-
 
 void node::set_val(const string& s)
 {

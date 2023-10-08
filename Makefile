@@ -1,40 +1,41 @@
+CC = gcc
 CXX = g++
 CXXFLAGS = -Wall -std=c++17 -DDEBUG -ggdb
 LDFLAGS = -static -lcppunit -L/usr/local/lib/
 APPNAME = qpfp
-EXT = cpp
-ROOTDIR  = ~/src/qpfp
-BUILD = ~/src/qpfp/build
-OBJ = ~/src/qpfp/build
-SRC = ~/src/qpfp/src
+ROOT  = ~/src/qpfp
+BLD = $(ROOT)/build
+OBJ = $(ROOT)/build
+SRC = $(ROOT)/src
 
 all: $(APPNAME) mtest node.o
+
 # link
 $(APPNAME): $(APPNAME).o main.o utility.o 
-	$(CXX) $(CXXFLAGS) -o $(BUILD)/$(APPNAME) $(BUILD)/$(APPNAME).o $(BUILD)/main.o $(BUILD)/utility.o
+	$(CXX) $(CXXFLAGS) -o $(BLD)/$(APPNAME) $(BLD)/$(APPNAME).o $(BLD)/main.o $(BLD)/utility.o
 
-mtest: utility.o 
-	$(CXX) $(CXXFLAGS) -c $(SRC)/mtest.cpp -o $(BUILD)/mtest.o
-	$(CXX) $(CXXFLAGS) $(BUILD)/mtest.o $(BUILD)/utility.o -o $(BUILD)/mtest
+mtest: utility.o node.o
+	$(CXX) $(CXXFLAGS) -c $(SRC)/mtest.cpp -o $(BLD)/mtest.o
+	$(CXX) $(CXXFLAGS) $(BLD)/mtest.o $(BLD)/utility.o -o $(BLD)/mtest
 
 # compile only
 $(APPNAME).o: 
-	$(CXX) $(CXXFLAGS) -c $(SRC)/$(APPNAME).$(EXT) -o $(BUILD)/$(APPNAME).o
+	$(CXX) $(CXXFLAGS) -c $(SRC)/$(APPNAME).cpp -o $(BLD)/$(APPNAME).o
 	
 main.o:
-	$(CXX) $(CXXFLAGS) -c $(SRC)/main.$(EXT) -o $(BUILD)/main.o
+	$(CXX) $(CXXFLAGS) -c $(SRC)/main.cpp -o $(BLD)/main.o
 
 utility.o: 
-	$(CXX) $(CXXFLAGS) -c $(SRC)/utility.$(EXT) -o $(BUILD)/utility.o
+	$(CXX) $(CXXFLAGS) -c $(SRC)/utility.cpp -o $(BLD)/utility.o
 
 node.o:
-	$(CXX) $(CXXFLAGS) -c $(SRC)/node.$(EXT) -o $(BUILD)/node.o
+	$(CXX) $(CXXFLAGS) -c $(SRC)/node.cpp -o $(BLD)/node.o
 
 # terminalnode.o: node.o
-# 	$(CXX) $(CXXFLAGS) -c $(SRC)/terminalnode.$(EXT) -o $(BUILD)/terminalnode.o
+# 	$(CXX) $(CXXFLAGS) -c $(SRC)/terminalnode.cpp -o $(BLD)/terminalnode.o
 
 # binarynode.o: terminalnode.o
-# 	$(CXX) $(CXXFLAGS) -c $(SRC)/binarynode.$(EXT) -o $(BUILD)/binarynode.o
+# 	$(CXX) $(CXXFLAGS) -c $(SRC)/binarynode.cpp -o $(BLD)/binarynode.o
 
 
 # regular expression where % is a wildcard
@@ -44,10 +45,10 @@ node.o:
 # install 
 .PHONY: install
 install: man
-	cp $(BUILD)/$(APPNAME) $(prefix)/bin/$(APPNAME)
+	cp $(BLD)/$(APPNAME) $(prefix)/bin/$(APPNAME)
 	rm $(prefix)/bin/$(APPNAME)
 
 # delete object files & app executable
 .PHONY: clean
 clean:
-	-rm -rf $(BUILD)/*
+	-rm -rf $(BLD)/*

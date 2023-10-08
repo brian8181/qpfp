@@ -6,9 +6,23 @@
 
 #include <iostream>
 #include <string>
+#include <list>
+#include "node.hpp"
 #include "utility.hpp"
 
 using namespace std;
+
+list<node> nodes;
+
+void create_nodes(const string& s)
+{
+	int len = s.size();
+	for(int i = 0; i < len; ++i)
+	{
+
+		//nodes.pop_back( node(input[i]) );
+	}
+}
 
 int main(int argc, char const *argv[])
 {
