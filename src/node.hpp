@@ -3,20 +3,15 @@
 
 using std::string;
 
-class Node
+class node
 {
-	private:
-
-		string value;
-
 	public:
-		Node(char c);
-		Node(string s);
+		node(char c);
+		node(const string& s);  
+        string get_val();
+        void set_val(const string& s);
 
-		Node() = default;
-
-		~Node() = default;
-
-		string Value();
+private:
+		string val;
 
 };
