@@ -110,6 +110,27 @@
             "miDebuggerPath": "/usr/bin/gdb"
         },
         {
+            "name": "std_mtest_minus",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/mtest",
+            "args": ["11-(22-33)"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "MAKE DEBUGGDB",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
             "name": "std_mtest_space",
             "type": "cppdbg",
             "request": "launch",
