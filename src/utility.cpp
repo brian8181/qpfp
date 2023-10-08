@@ -11,7 +11,8 @@
 using std::string;
 using std::vector;
 using std::smatch;
-
+using std::cout;
+using std::endl;
 
 // :SUB
 // step foreward until ')'
@@ -53,6 +54,17 @@ void find_sub_expr(const std::string& input)
                     string sub_string = input.substr(opos+1, (cpos)-(opos+1));
                     std::cout << "Sub Expression: " << sub_exp  << std::endl;
                     std::cout << "Sub String: " << sub_string  << std::endl;
+
+                    vector<string> matches;
+                    string expr = R"(\(\d+\+\d+\))";
+                    qmatch(expr, sub_exp, matches);
+
+                    int len = matches.size();
+                    for(int i = 0; i < len; ++i)
+                    {
+                        std::cout << "mathches[" << i << "]=" << matches[i] << std::endl;
+                    }
+
                     return;
                     // match rhs
                     // find op
