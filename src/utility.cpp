@@ -57,10 +57,10 @@ void find_sub_expr(const std::string& input)
                    
                     for(int i = 0; i < len; ++i)
                     {
-                        std::cout << "mathches[" << i << "][0]=" << matches[i][0].str() <<  "   \\\\ sub" << std::endl; // sub
-                        std::cout << "mathches[" << i << "][1]=" << matches[i][1].str() <<  "   \\\\ rhs" << std::endl; // rhs
-                        std::cout << "mathches[" << i << "][2]=" << matches[i][2].str() <<  "   \\\\ opr" << std::endl; // opr
-                        std::cout << "mathches[" << i << "][3]=" << matches[i][3].str() <<  "   \\\\ lhs" << std::endl; // lhs
+                        std::cout << "matches[" << i << "][0]=" << matches[i][0].str() <<  "   \\\\ sub" << std::endl; // sub
+                        std::cout << "matches[" << i << "][1]=" << matches[i][1].str() <<  "   \\\\ rhs" << std::endl; // rhs
+                        std::cout << "matches[" << i << "][2]=" << matches[i][2].str() <<  "   \\\\ opr" << std::endl; // opr
+                        std::cout << "matches[" << i << "][3]=" << matches[i][3].str() <<  "   \\\\ lhs" << std::endl; // lhs
                     }
                     //
                     return;
