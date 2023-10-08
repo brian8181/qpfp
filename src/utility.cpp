@@ -56,8 +56,8 @@ void find_sub_expr(const std::string& input)
                     std::cout << "Sub String: " << sub_string  << std::endl;
 
                     vector<string> matches;
-                    string expr = R"(\(\s*\d+\s*[+-]\s*\d+\s*\))";
-                    //string expr = R"(\d+\s*[+-]\s*\d+)";
+                    string expr = R"(\(\s*\d+\s*[*/+-]\s*\d+\s*\))";
+                    //string expr = R"(\d+\s*[*/+-]\s*\d+)";
                     qmatch(expr, sub_exp, matches);
 
                     int len = matches.size();

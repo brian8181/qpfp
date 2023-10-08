@@ -93,7 +93,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/mtest",
-            "args": ["11+(22+33)"],
+            "args": ["11+(22+33)*(2/5)"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
