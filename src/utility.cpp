@@ -62,11 +62,13 @@ void find_sub_expr(const std::string& input)
                         std::cout << "matches[" << i << "][3]=" << matches[i][3].str() <<  "   \\\\ lhs" << std::endl; // lhs
                     }
                     //
-                    return;
+                    i = cpos+1;
+                    opos = i;
+                    cpos = i;
+                    continue;
                }
            }
-           i = cpos;
-       }
+        }
     ++i;
     }
 }
