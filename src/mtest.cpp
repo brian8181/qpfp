@@ -51,8 +51,6 @@ void find_sub_expr(const std::string& input)
 					string lhs = "\\s*(\\d+)\\s*";
 					string rhs = "(([*/+-])\\s*(\\d+)\\s*)+";
 					//string rhs = "(([*/+-])\\s*(\\d+)\\s*)+(\\s*(\\d+)\\s*([*/+-])\\s*(\\d+)\\s*)*";
-					// lhs + rhs
-					//string expr = "\\s*(\\d+)\\s*(([*/+-])\\s*(\\d+)\\s*)+";
 					string expr = lhs + rhs;
 					
                     vector<smatch> matches;
