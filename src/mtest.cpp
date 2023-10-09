@@ -50,8 +50,8 @@ void find_sub_expr(const std::string& input)
                     //string expr = R"(\s*(\d+)\s*(([*/+-])\s*(\d+)\s*)+)";
 					string lhs = "\\s*(\\d+)\\s*";
 					string rhs = "(([*/+-])\\s*(\\d+)\\s*)+";
+					// lhs + rhs
 					//string expr = "\\s*(\\d+)\\s*(([*/+-])\\s*(\\d+)\\s*)+";
-					//string expr = "\\s*(\\d+)\\s*" + "(([*/+-])\\s*(\\d+)\\s*)+";
 					string expr = lhs + rhs;
 					
                     vector<smatch> matches;
@@ -82,7 +82,7 @@ int main(int argc, char const *argv[])
 		cout << "argc=" << argc << endl;
 	
 	string s = argv[1];
-	cout << "input = " << s << endl; 
+	cout << "argv[1] = " << s << endl; 
 
 	find_sub_expr(s);
 	return 0;
