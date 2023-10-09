@@ -33,23 +33,24 @@ void find_sub_expr(const std::string& input)
 
     while(i < len)  
     {
-        //std::cout << "input[" << i << "]=" << input[i] << std::endl;
+        //std::cout << "input[" << i << "]=" << input[i] << endl;
         if(input[i] == ')')
         {
             cpos = i;
             while(i > opos)
             {
                 --i;
-                //std::cout << "input[" << i << "]=" << input[i] << std::endl;
+                //std::cout << "input[" << i << "]=" << input[i] << endl;
                 if(input[i] == '(')
                 {
                     opos = i;
                     string sub_exp = input.substr(opos+1, (cpos)-(opos+1));
-                    std::cout << "sub exp = " << sub_exp  << std::endl;
+                    std::cout << "sub exp = " << sub_exp  << endl;
 
                     //string expr = R"(\s*(\d+)\s*(([*/+-])\s*(\d+)\s*)+)";
 					string lhs = "\\s*(\\d+)\\s*";
 					string rhs = "(([*/+-])\\s*(\\d+)\\s*)+";
+					//string rhs = "(([*/+-])\\s*(\\d+)\\s*)+(\\s*(\\d+)\\s*([*/+-])\\s*(\\d+)\\s*)*";
 					// lhs + rhs
 					//string expr = "\\s*(\\d+)\\s*(([*/+-])\\s*(\\d+)\\s*)+";
 					string expr = lhs + rhs;
@@ -60,11 +61,12 @@ void find_sub_expr(const std::string& input)
                     int len = matches.size();
                     for(int i = 0; i < len; ++i)
                     {
-                        std::cout << "matches[" << i << "][0] = " << matches[i][0].str() <<  "   \\\\ sub" << std::endl; // sub
-                        std::cout << "matches[" << i << "][1] = " << matches[i][1].str() <<  "   \\\\ lhs" << std::endl; // lhs
-						std::cout << "matches[" << i << "][2] = " << matches[i][2].str() <<  "   \\\\ rhs" << std::endl; // rhs
-                        std::cout << "matches[" << i << "][3] = " << matches[i][3].str() <<  "   \\\\ opr" << std::endl; // opr
-                        std::cout << "matches[" << i << "][4] = " << matches[i][4].str() <<  "   \\\\ rhs" << std::endl; // rhs
+                        cout << "matches[" << i << "][0] = " << matches[i][0].str() <<  "   \\\\ sub" << endl; // sub
+                        cout << "matches[" << i << "][1] = " << matches[i][1].str() <<  "   \\\\ lhs" << endl; // lhs
+						cout << "matches[" << i << "][2] = " << matches[i][2].str() <<  "   \\\\ rhs" << endl; // rhs
+                        cout << "matches[" << i << "][3] = " << matches[i][3].str() <<  "   \\\\ opr" << endl; // opr
+                        cout << "matches[" << i << "][4] = " << matches[i][4].str() <<  "   \\\\ rhs" << endl; // rhs
+						cout << "matches[" << i << "][5] = " << matches[i][5].str() <<  "   \\\\ rhs" << endl; // rhs
                     }
                     
                     i = (opos = cpos);
