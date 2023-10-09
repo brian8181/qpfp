@@ -44,15 +44,13 @@ void find_sub_expr(const std::string& input)
                 if(input[i] == '(')
                 {
                     opos = i;
-                    string sub_exp1 = input.substr(opos, (cpos+1)-opos);
-                    string sub_exp2 = input.substr(opos+1, (cpos)-(opos+1));
-                    std::cout << "sub exp1: " << sub_exp1  << std::endl;
-                    std::cout << "sub exp2: " << sub_exp2  << std::endl;
+                    string sub_exp = input.substr(opos+1, (cpos)-(opos+1));
+                    std::cout << "sub exp: " << sub_exp  << std::endl;
 
                     //string expr = R"(\(\s*(\d+)\s*([*/+-])\s*(\d+)\s*\))";
                     string expr = R"(\s*(\d+)\s*([*/+-])\s*(\d+)\s*)";
                     vector<smatch> matches;
-                    qmatch(expr, sub_exp2, matches);
+                    qmatch(expr, sub_exp, matches);
 
                     int len = matches.size();
                     for(int i = 0; i < len; ++i)
