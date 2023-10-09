@@ -48,9 +48,11 @@ void find_sub_expr(const std::string& input)
                     std::cout << "sub exp = " << sub_exp  << std::endl;
 
                     //string expr = R"(\s*(\d+)\s*(([*/+-])\s*(\d+)\s*)+)";
-					string expr = "\\s*(\\d+)\\s*(([*/+-])\\s*(\\d+)\\s*)+";
+					string lhs = "\\s*(\\d+)\\s*";
+					string rhs = "(([*/+-])\\s*(\\d+)\\s*)+";
+					//string expr = "\\s*(\\d+)\\s*(([*/+-])\\s*(\\d+)\\s*)+";
 					//string expr = "\\s*(\\d+)\\s*" + "(([*/+-])\\s*(\\d+)\\s*)+";
-					string binop = "(([*/+-])\\s*(\\d+)\\s*)+";
+					string expr = lhs + rhs;
 					
                     vector<smatch> matches;
                     qmatch(expr, sub_exp, matches);
