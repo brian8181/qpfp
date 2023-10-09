@@ -89,6 +89,27 @@
             "miDebuggerPath": "/usr/bin/gdb"
         },
         {
+            "name": "std_mtest.5",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/mtest",
+            "args": ["1+2+3"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "MAKE DEBUGGDB",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
             "name": "std_mtest",
             "type": "cppdbg",
             "request": "launch",

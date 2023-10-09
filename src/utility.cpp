@@ -37,7 +37,7 @@ void find_sub_expr(const std::string& input)
         if(input[i] == ')')
         {
             cpos = i;
-            while(i > -1)
+            while(i > opos)
             {
                 --i;
                 std::cout << "input[" << i << "]=" << input[i] << std::endl;
@@ -62,10 +62,10 @@ void find_sub_expr(const std::string& input)
                         std::cout << "matches[" << i << "][3]=" << matches[i][3].str() <<  "   \\\\ lhs" << std::endl; // lhs
                     }
                     //
-                    i = cpos+1;
+                    i = cpos;
                     opos = i;
                     cpos = i;
-                    continue;
+                    break;
                }
            }
         }
