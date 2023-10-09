@@ -45,7 +45,7 @@ void find_sub_expr(const std::string& input)
                 {
                     opos = i;
                     string sub_exp = input.substr(opos+1, (cpos)-(opos+1));
-                    std::cout << "sub exp: " << sub_exp  << std::endl;
+                    std::cout << "sub exp = " << sub_exp  << std::endl;
 
                     string expr = R"(\s*(\d+)\s*([*/+-])\s*(\d+)\s*)";
                     vector<smatch> matches;
@@ -54,10 +54,10 @@ void find_sub_expr(const std::string& input)
                     int len = matches.size();
                     for(int i = 0; i < len; ++i)
                     {
-                        std::cout << "matches[" << i << "][0]=" << matches[i][0].str() <<  "   \\\\ sub" << std::endl; // sub
-                        std::cout << "matches[" << i << "][1]=" << matches[i][1].str() <<  "   \\\\ rhs" << std::endl; // rhs
-                        std::cout << "matches[" << i << "][2]=" << matches[i][2].str() <<  "   \\\\ opr" << std::endl; // opr
-                        std::cout << "matches[" << i << "][3]=" << matches[i][3].str() <<  "   \\\\ lhs" << std::endl; // lhs
+                        std::cout << "matches[" << i << "][0] = " << matches[i][0].str() <<  "   \\\\ sub" << std::endl; // sub
+                        std::cout << "matches[" << i << "][1] = " << matches[i][1].str() <<  "   \\\\ rhs" << std::endl; // rhs
+                        std::cout << "matches[" << i << "][2] = " << matches[i][2].str() <<  "   \\\\ opr" << std::endl; // opr
+                        std::cout << "matches[" << i << "][3] = " << matches[i][3].str() <<  "   \\\\ lhs" << std::endl; // lhs
                     }
                     
                     i = (opos = cpos);
@@ -75,7 +75,7 @@ int main(int argc, char const *argv[])
 		cout << "argc=" << argc << endl;
 	
 	string s = argv[1];
-	cout << "input=" << s << endl; 
+	cout << "input = " << s << endl; 
 
 	find_sub_expr(s);
 	return 0;
