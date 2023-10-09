@@ -47,7 +47,8 @@ void find_sub_expr(const std::string& input)
                     string sub_exp = input.substr(opos+1, (cpos)-(opos+1));
                     std::cout << "sub exp = " << sub_exp  << std::endl;
 
-                    string expr = R"(\s*(\d+)\s*(([*/+-])\s*(\d+)\s*)+)";
+                    //string expr = R"(\s*(\d+)\s*(([*/+-])\s*(\d+)\s*)+)";
+					string expr = "\\s*(\\d+)\\s*(([*/+-])\\s*(\\d+)\\s*)+";
 					//string binop = R"( (([*/+-])\s*(\d+)\s*)+ )";
                     vector<smatch> matches;
                     qmatch(expr, sub_exp, matches);
