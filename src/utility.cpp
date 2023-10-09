@@ -33,14 +33,14 @@ void find_sub_expr(const std::string& input)
 
     while(i < len)  
     {
-        std::cout << "input[" << i << "]=" << input[i] << std::endl;
+        //std::cout << "input[" << i << "]=" << input[i] << std::endl;
         if(input[i] == ')')
         {
             cpos = i;
             while(i > opos)
             {
                 --i;
-                std::cout << "input[" << i << "]=" << input[i] << std::endl;
+                //std::cout << "input[" << i << "]=" << input[i] << std::endl;
                 if(input[i] == '(')
                 {
                     opos = i;
@@ -50,6 +50,7 @@ void find_sub_expr(const std::string& input)
                     std::cout << "sub exp2: " << sub_exp2  << std::endl;
 
                     string expr = R"(\(\s*(\d+)\s*([*/+-])\s*(\d+)\s*\))";
+                    //string expr = R"(\s*(\d+)\s*([*/+-])\s*(\d+)\s*)";
                     vector<smatch> matches;
                     qmatch(expr, sub_exp1, matches);
 
@@ -62,9 +63,7 @@ void find_sub_expr(const std::string& input)
                         std::cout << "matches[" << i << "][3]=" << matches[i][3].str() <<  "   \\\\ lhs" << std::endl; // lhs
                     }
                     //
-                    i = cpos;
-                    opos = i;
-                    cpos = i;
+                    i = (opos = cpos);
                     break;
                }
            }
