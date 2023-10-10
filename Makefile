@@ -9,7 +9,7 @@ BLD = $(ROOT)/build
 OBJ = $(ROOT)/build
 SRC = $(ROOT)/src
 
-all: $(APPNAME) mtest ntest test1 node.o
+all: $(APPNAME) mtest ntest otest test1 node.o
 
 # link
 $(APPNAME): $(APPNAME).o main.o utility.o 

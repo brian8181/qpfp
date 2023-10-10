@@ -26,13 +26,13 @@ int main(int argc, char const *argv[])
     vector<smatch> matches;
 
     // string expr = "(\\d+)";
-    // string expr = "\\d+";
+    string expr = "(\\d)+";
 
-    string lhs = "\\s*(\\d+)\\s*";
+    //string lhs = "\\s*(\\d+)\\s*";
     // string op = "([*/+-])";
-    string rhs = "(((([*/+-])\\s*(\\d+)\\s*)+)+)";
+    //string rhs = "(((([*/+-])\\s*(\\d+)\\s*)+)+)";
     //string rhs = "(([*/+-])\\s*(\\d+)\\s*)+(\\s*(\\d+)\\s*([*/+-])\\s*(\\d+)\\s*)*";
-    string expr = lhs + rhs;
+    //string expr = lhs + rhs;
 
     qmatch(expr, s, matches);
 
