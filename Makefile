@@ -9,7 +9,7 @@ BLD = $(ROOT)/build
 OBJ = $(ROOT)/build
 SRC = $(ROOT)/src
 
-all: $(APPNAME) mtest ntest node.o
+all: $(APPNAME) mtest ntest test1 node.o
 
 # link
 $(APPNAME): $(APPNAME).o main.o utility.o 
@@ -22,6 +22,20 @@ mtest: utility.o node.o
 ntest: utility.o 
 	$(CXX) $(CXXFLAGS) -c $(SRC)/ntest.cpp -o $(BLD)/ntest.o
 	$(CXX) $(CXXFLAGS) $(BLD)/ntest.o $(BLD)/utility.o -o $(BLD)/ntest
+
+
+otest: utility.o 
+	$(CXX) $(CXXFLAGS) -c $(SRC)/otest.cpp -o $(BLD)/otest.o
+	$(CXX) $(CXXFLAGS) $(BLD)/otest.o $(BLD)/utility.o -o $(BLD)/otest
+
+
+test1: utility.o 
+	$(CXX) $(CXXFLAGS) -c $(SRC)/test1.cpp -o $(BLD)/test1.o
+	$(CXX) $(CXXFLAGS) $(BLD)/test1.o $(BLD)/utility.o -o $(BLD)/test1
+
+# %test:
+# 	$(CXX) $(CXXFLAGS) -c $(SRC)/%test.cpp -o $(BLD)/%test.o
+# 	$(CXX) $(CXXFLAGS) $(BLD)/%test.o $(BLD)/utility.o -o $(BLD)/%test
 
 # compile only
 $(APPNAME).o: 
