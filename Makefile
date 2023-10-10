@@ -50,17 +50,9 @@ utility.o:
 node.o:
 	$(CXX) $(CXXFLAGS) -c $(SRC)/node.cpp -o $(BLD)/node.o
 
-# terminalnode.o: node.o
-# 	$(CXX) $(CXXFLAGS) -c $(SRC)/terminalnode.cpp -o $(BLD)/terminalnode.o
-
-# binarynode.o: terminalnode.o
-# 	$(CXX) $(CXXFLAGS) -c $(SRC)/binarynode.cpp -o $(BLD)/binarynode.o
-
-
 # regular expression where % is a wildcard
 # test%:
 #  	$(CXX) $(CXXFLAGS) -c -o $@ $^
-
 
 # regular expression where % is a wildcard
 # %.o:%.c
