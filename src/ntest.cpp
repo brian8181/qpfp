@@ -22,15 +22,20 @@ int main(int argc, char const *argv[])
 	cout << "argv[1] = " << s << endl; 
 
     vector<smatch> matches;
-    string exp = "(\\d)+";
+    string lhs = "\\s*(\\d+)\\s*";
+    string op = "([*/+-])";
+    string rhs = "(([*/+-])\\s*(\\d+)\\s*)+";
+     
+    //string exp = "(\\d)+";
+    string exp = "(\\d+)";
     qmatch(exp, s, matches);
 
     int len = matches.size();
     for(int i = 0; i < len; ++i)
     {
-            cout << "matches[" << i << "] = " << matches[i].str() <<  endl;
-            // cout << "matches[" << i << "][1] = " << matches[i][1].str() <<  endl;
-            // cout << "matches[" << i << "][2] = " << matches[i][2].str() <<  endl;
-            // cout << "matches[" << i << "][3] = " << matches[i][3].str() <<  endl;
+        cout << "matches[" << i << "] = " << matches[i].str() <<  endl;
+        // cout << "matches[" << i << "][1] = " << matches[i][1].str() <<  endl;
+        // cout << "matches[" << i << "][2] = " << matches[i][2].str() <<  endl;
+        // cout << "matches[" << i << "][3] = " << matches[i][3].str() <<  endl;
     }
 }
