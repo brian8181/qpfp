@@ -1,4 +1,4 @@
-#
+# Mon Oct  9 08:25:50 PM CDT 2023
 CC = gcc
 CXX = g++
 CXXFLAGS = -Wall -std=c++17 -DDEBUG -ggdb
