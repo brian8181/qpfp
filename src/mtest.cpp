@@ -3,7 +3,6 @@
 // File Name:  qpfp.cpp
 // Build Date: Sat Aug  5 11:17:18 PM CDT 2023
 // Version:    0.0.1
-
 #include <iostream>
 #include <string>
 #include <list>
@@ -11,8 +10,6 @@
 #include "utility.hpp"
 
 using namespace std;
-
-list<node> nodes;
 
 void create_nodes(const string& s)
 {
@@ -78,8 +75,12 @@ void find_sub_expr(const std::string& input)
 
 int main(int argc, char const *argv[])
 {
+    // check for input
 	if(argc < 2)
+    {
 		cout << "argc=" << argc << endl;
+        return 0;
+    }
 	
 	string s = argv[1];
 	cout << "argv[1] = " << s << endl; 
