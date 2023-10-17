@@ -31,6 +31,7 @@ int main(int argc, char const *argv[])
     string lhs = "\\s*(\\d+)\\s*";
     // string op = "([*/+-])";
     string rhs = "(((([*/+-])\\s*(\\d+)\\s*)+)+)";
+    string opr = "([*/+-])";
     //string rhs = "(([*/+-])\\s*(\\d+)\\s*)+(\\s*(\\d+)\\s*([*/+-])\\s*(\\d+)\\s*)*";
     string expr = lhs + rhs;
 
